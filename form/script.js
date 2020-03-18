@@ -22,6 +22,7 @@ const isValidEmail = () => {
 } else {
   showError(input, 'Email is not valid');
 }
+}
 
 const checkRequired = (inputArr) => {
   inputArr.forEach(input => {
@@ -33,17 +34,32 @@ const checkRequired = (inputArr) => {
   });
 }
 
+const checkLength = (input, min, max) => {
+  if(input.value.length < min) {
+    showError(input, `${getFieldName(input)} must be at least ${min} characters`);
+  } else if (input.value.length > max) {
+    showError(input, `${getFieldName} must be less than ${max} Characters`);
+  }
+};
+
+const checkPasswordsMatch = (input1, input2) => {
+  if (input1.value !== input2.value) {
+    showError(input2, 'Passwords must match' )
+  }
+}
+
 const getFieldName = (input) => {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 };
 
-form.addEventListener('submit', (e) =>{
+form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   checkRequired([username, email, password, password2]);
   checkLength(username, 3, 15);
   checkLength(password, 6, 20);
-  checkEmail(email)
+  checkEmail(email);
+  checkPasswordsMatch(password, password2);
 
 // if/else example for one input
   // if(username.value === '') {
@@ -51,4 +67,5 @@ form.addEventListener('submit', (e) =>{
   // } else {
   //   showSuccess(username);
   // }
-})
+});
+
