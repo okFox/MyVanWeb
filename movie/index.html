@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css">
   <title>Movie Seat Selector</title>
 </head>
 <body>
   <div class="movie-container">
     <label>Pick A Movie:</label>
     <select id="movie">
-      <option value="10">Knives Out</option>
-      <option value="12">Star Wars</option>
-      <option value="8">Ernest Saves Christmas</option>
-      <option value="9">Notorius</option>
+      <option value="10">Knives Out - $10</option>
+      <option value="12">Star Wars - $12</option>
+      <option value="8">Ernest Saves Christmas - $8</option>
+      <option value="9">Notorius - $9</option>
     </select>
   </div>
 
@@ -32,10 +34,20 @@
   </ul>
 
   <div class="container">
-    <div class="screen">
+    <div class="screen"></div>
       <div class="row">
         <div class="seat"></div>
         <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
         <div class="seat"></div>
         <div class="seat"></div>
         <div class="seat"></div>
@@ -57,16 +69,6 @@
         <div class="seat"></div>
         <div class="seat"></div>
         <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-      </div>
-      <div class="row">
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
         <div class="seat occupied"></div>
         <div class="seat occupied"></div>
         <div class="seat"></div>
@@ -93,10 +95,12 @@
         <div class="seat occupied"></div>
         <div class="seat occupied"></div>
       </div>
-      <p class="text">You have selected <span id="count">0</span> seats for a price of $<span id="total">0</span></p>
-
     </div>
-  </div>
+
+      <p class="text">
+        You have selected <span id="count">0</span> 
+        seats for a price of $<span id="total">0</span>
+      </p>
 
 
 
